@@ -3,5 +3,9 @@
     "name": "db",
     "builds": [
         { "src": "index.js", "use": "@now/node-server" }
+    ],
+    "routes": [
+        {"src": "^/public/(.*)", "dest": "public/$1"},
+        {"src": "^/(.*)", "dest": "index.js"}
     ]
 }

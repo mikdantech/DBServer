@@ -1,21 +1,21 @@
+// importing
 const express = require('express');
 const jsonServer = require('json-server');
+const path = require('path');
 
-const expressServer = express();
-// const fs = require('fs');
-// let rawdata = fs.readFileSync('db.json');
 
-const middlewares = jsonServer.defaults();
-const router = jsonServer.router('db.json');
+// local variables
 const port = 3000;
+const dbFileName = 'db.json';
 
-// server.get('/', (req, res) => {
-//   console.log(jsonServer);
-//   res.send(jsonServer);
-// });
+// fixed settings
+const middlewares = jsonServer.defaults();
+const router = jsonServer.router(path.join(__dirname, 'db.json'));
 
+// routing with Express.js
+const expressServer = express();
 expressServer.use(middlewares)
 expressServer.use(router)
 expressServer.listen(port, () => {
-  console.log('JSON Server is running', '\nhttp://localhost:' + port);
+  console.log('JSON Server is running', '\n\nhttp://localhost:' + port);
 });

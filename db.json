@@ -1,9 +1,12 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "blogs": [
+    {"id": 1, "title": "How to Create DB Server", "user_id": 1}
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {"id": 1, "blog_id": 1, "comment": "Looks Good", "user_id": 2}
   ],
-  "profile": { "name": "typicode" }
+  "users": [
+    {"id": 1, "email": "admin@localhost"},
+    {"id": 2, "email": "user@localhost"}
+  ]
 }
